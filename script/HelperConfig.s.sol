@@ -28,7 +28,9 @@ contract HelperConfig is Script {
     }
 
     function getOrCreateAnvilEthConfig() public returns(NetworkConfig memory) {
-        
+        if (activeNetworkConfig.wethUsdPriceFeed != address(0)) {
+            return activeNetworkConfig;
+        }
     }
 
 }
